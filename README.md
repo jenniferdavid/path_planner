@@ -7,7 +7,7 @@ repository as the `src/` subdirectory of that workspace.
 
     mkdir -p /path/to/workspace
     cd /path/to/workspace
-    git clone git@github.com:poftwaresatent/cargo-ants-ros.git src
+    git clone git@github.com:jenniferdavid/path_planner.git src
     cd src
     catkin_init_workspace
     git clone https://github.com/poftwaresatent/estar2.git
@@ -29,6 +29,9 @@ reinventing the wheel.
 [sfl2]: https://github.com/poftwaresatent/sfl2
 [estar2]: https://github.com/poftwaresatent/estar2
 
+Load your default sh file as from catkin_ws as:
+source /devel/setup.sh
+
 Simulator
 ---------
 
@@ -49,7 +52,7 @@ work).
 
     roscore
     ./devel/lib/cargo_ants_path_adaptor/path_adaptor alice bob
-    ./devel/lib/sfl2/nepumuk -c src/sfl2/ros/cargo-ants.yaml
+    	
     rostopic pub -1 bob/path cargo_ants_msgs/Path '{path_id: 1, goals: [{gx: 40, gy: -5, gth: -1.5, dr: 1, dth: 0.1}, {gx: 40, gy: 30, gth: -0.7, dr: 0.1, dth: 0.1}]}'
     rostopic pub -1 alice/path cargo_ants_msgs/Path '{path_id: 1, goals: [{gx: -5, gy: 30, gth: 2, dr: 1, dth: 0.1}, {gx: 35, gy: 18, gth: -1, dr: 0.1, dth: 0.1}]}'
 
